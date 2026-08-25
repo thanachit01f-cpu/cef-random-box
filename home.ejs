@@ -1,0 +1,4 @@
+<!doctype html><html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CEF-SHOP</title><link rel="stylesheet" href="/style.css"></head><body>
+<header><b>CEF-SHOP</b><nav><a href="/">หน้าแรก</a><a href="/login">เข้าสู่ระบบ</a><a href="/register">สมัครสมาชิก</a></nav></header>
+<main><section class="hero"><span>CEF-SHOP</span><h1>กล่องสุ่มไอดีเกม</h1><p>เลือกกล่องที่ชอบ เติมเงิน แล้วกดสุ่มได้ทันที</p></section>
+<h2>กล่องสุ่มยอดนิยม</h2><div class="grid"><% products.forEach((p,i)=>{ %><a class="card" href="/product/<%=i%>"><div class="icon"><%=p.icon%></div><h3><%=p.name%></h3><strong>฿<%=p.price%></strong><button>ดูรายละเอียด</button></a><% }) %></div></main></body></html>
