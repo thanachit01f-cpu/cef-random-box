@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CEF-SHOP</title>
+  <style>
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Arial,sans-serif;
+      background:#f5f7fb;
+      color:#111827;
+    }
+    header{
+      background:#111827;
+      color:white;
+      padding:18px 20px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+    header b{font-size:24px}
+    nav a{
+      color:white;
+      text-decoration:none;
+      margin-left:15px;
+    }
+    .hero{
+      text-align:center;
+      padding:45px 20px;
+      background:white;
+    }
+    .hero h1{
+      margin:0 0 10px;
+      font-size:36px;
+    }
+    .hero p{color:#6b7280}
+    .container{
+      max-width:1100px;
+      margin:auto;
+      padding:25px 15px;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:18px;
+    }
+    .card{
+      background:white;
+      border-radius:14px;
+      padding:20px;
+      box-shadow:0 3px 12px #00000012;
+    }
+    .card h3{margin-top:0}
+    .price{
+      font-size:22px;
+      font-weight:bold;
+      color:#2563eb;
+    }
+    .btn{
+      display:block;
+      text-align:center;
+      background:#2563eb;
+      color:white;
+      padding:11px;
+      border-radius:8px;
+      text-decoration:none;
+      margin-top:12px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <b>CEF-SHOP</b>
+  <nav>
+    <a href="/">หน้าแรก</a>
+    <a href="/login">เข้าสู่ระบบ</a>
+    <a href="/register">สมัครสมาชิก</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>CEF-SHOP</h1>
+  <p>ร้านกล่องสุ่มและสินค้าเกม</p>
+</section>
+
+<div class="container">
+  <h2>กล่องสุ่มยอดนิยม</h2>
+
+  <div class="grid">
+    <% (products || []).forEach(function(product) { %>
+      <div class="card">
+        <h3><%= product.name || 'สินค้า CEF-SHOP' %></h3>
+        <p><%= product.description || 'สินค้าเกมราคาพิเศษ' %></p>
+        <div class="price">
+          <%= product.price || 0 %> บาท
+        </div>
+        <a class="btn" href="/product/<%= product.id || '' %>">
+          ดูสินค้า
+        </a>
+      </div>
+    <% }) %>
+  </div>
+</div>
+
+</body>
+</html>
